@@ -1,0 +1,37 @@
+.contenedor{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+
+.container-fluid{
+    background-color: #182848;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.541);
+    padding: 2rem 0;
+}
+
+.header{
+    width: 100%;
+}
+
+.header h2{
+    color: #ffff;
+    font-size: 3rem;
+}
+
+.header span{
+    font-size: 1.5rem;
+    color: rgba(228, 228, 228, 0.726);
+}
+
+/* Cards */
+
+.card{
+    background-color: #182848;
+    color: #ffff;
+    box-shadow:  5px 4px 10px #000;
+    margin: 0 0 2rem 0;
+}
+
