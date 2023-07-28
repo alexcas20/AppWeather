@@ -1,0 +1,14 @@
+/* .container-fluid{
+    background-color: #182848;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.541);
+    padding: 2rem 0;
+} */
+
+/* Cards */
+
+.card{
+    background-color: #182848;
+    color: #ffff;
+    box-shadow:  5px 4px 10px #000;
+    margin: 0 0 2rem 0;
+}
