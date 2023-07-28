@@ -16,11 +16,11 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   //Example petition
-  getCity(): Observable<Weather>{
+  getCity(city: string): Observable<Weather>{
 
       return this.http.get<Weather>(this.url, {
         params: {
-          q: 'Mexico',
+          q: city,
           appid: this.key
         }
       })

@@ -1,28 +1,31 @@
 <div class="container-fluid mt-5">
-    <div class="row d-flex justify-content-center d-flex-wrap">
-      <div class="col-4">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-5 col-md-4 col-sm-8 " *ngFor="let item of dataTotal">
         <div class="card">
           <div class="card-title">
-            <h2>Mexico</h2>
+            <h2>{{item.name}}</h2>
           </div>
           <div class="card-body">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, qui ad esse odit mollitia aliquam odio, non at nihil impedit consequatur doloremque doloribus consequuntur hic, provident corporis repellendus? Natus, deserunt?</p>
+
+            <img [src]="imagesWeather[0]">
+
+            <span>{{item.main.temp}}</span>
+            <br>
+            <span>{{item.main.feels_like}}</span>
+
+            <br>
+
+          
+            <br>
+            <span>{{item.weather.description}}</span>
+
+
+            <!-- <span>Wind speed: {{dataW?.wind?.speed}}</span>
+            <span>Humidity: {{dataW?.main?.humidity}}</span> -->
+            
           </div>
           <div class="card-footer">
-            <p>Hola q tal</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <div class="card-title">
-            <h2>Usa</h2>
-          </div>
-          <div class="card-body">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, qui ad esse odit mollitia aliquam odio, non at nihil impedit consequatur doloremque doloribus consequuntur hic, provident corporis repellendus? Natus, deserunt?</p>
-          </div>
-          <div class="card-footer">
-            <p>Hola q tal</p>
+            
           </div>
         </div>
       </div>

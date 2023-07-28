@@ -12,3 +12,20 @@
     box-shadow:  5px 4px 10px #000;
     margin: 0 0 2rem 0;
 }
+
+
+.card-title{
+    text-align: center;
+    padding: 10px;
+}
+
+.card-body span{
+    font-size: 2rem;
+}
+
+
+
+.card-footer{
+    background-color: gray;
+    border-radius: 0 50% 0 0;
+}
