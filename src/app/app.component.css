@@ -12,9 +12,7 @@
     padding: 2rem 0;
 }
 
-.header{
-    width: 100%;
-}
+
 
 .header h2{
     color: #ffff;
@@ -25,6 +23,16 @@
     font-size: 1.5rem;
     color: rgba(228, 228, 228, 0.726);
 }
+
+/* img header */
+.img-header{
+    float: left;
+    position: relative;
+    width: 200px;
+    bottom: 2rem;
+    left: 1.5rem;
+}
+
 
 /* Cards */
 
