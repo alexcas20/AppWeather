@@ -17,6 +17,7 @@
 .card-title{
     text-align: center;
     padding: 10px;
+    margin: 2rem 0 -2rem 0;
 }
 
 .card-body span{
@@ -28,4 +29,16 @@
 .card-footer{
     background-color: gray;
     border-radius: 0 50% 0 0;
+}
+
+/* Image */
+.img-fluid {
+    width: 180px;
+    margin: 0 0 -5rem 0;
+}
+
+/* Info */
+
+.info .grados{
+    font-size: 5rem;
 }

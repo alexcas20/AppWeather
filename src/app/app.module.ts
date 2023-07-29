@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import { MainComponent } from './main/main.component'
+import { MainComponent } from './main/main.component';
+import { ConversorGradosPipe } from './pipes/conversor-grados.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    ConversorGradosPipe
   ],
   imports: [
     BrowserModule,
