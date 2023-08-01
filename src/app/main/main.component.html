@@ -1,9 +1,23 @@
-<div class="container-fluid mt-5">
+<!-- Search -->
+
+<div class="container mt-5">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search City" aria-label="search city" aria-describedby="basic-addon2"  [(ngModel)]="busqueda">
+    <div class="input-group-append">
+      <button class="input-group-text" (click)="searchCity()">Search</button>
+    </div>
+  </div>
+</div>
+  
+
+
+<div class="container mt-5">
+  <h2>Some important Cities</h2>
     <div class="row d-flex justify-content-center">
-      <div class="col-lg-5 col-md-6 col-sm-8 " *ngFor="let item of dataTotal">
+      <div class="col-lg-5 col-md-6 col-sm-8 col-xs-6 " *ngFor="let item of dataTotal">
         <div class="card">
           <div class="card-title">
-            <h2>{{item.name}}</h2>
+            <h3>{{item.name}}</h3>
           </div>
           <div class="card-body">
 
@@ -13,26 +27,35 @@
          
             <br>
 
-            <div class="info">
-              <span class="grados d-flex justify-content-center">
+            <div class="info-temps d-flex justify-content-center">
+              <span class="grados">
                 {{item.main.temp | conversorGrados}}</span>
-              <br>
-              <span>{{item.main.feels_like}}</span>
-  
-              <br>
+           
+            <div class="rango-temps">
+              <span> Max  </span>
+              <p>{{item.main.temp_max | conversorGrados }}</p>
+              
+              <span> Min  </span>
+              <p>{{item.main.temp_min | conversorGrados}}</p>
             </div>
             
+          </div>
+
+          <div class="info-weather d-flex justify-content-center">
+            <span>{{item.weather.main}}</span>
+       
+          </div>
 
           
-            <br>
-            <span>{{item.weather.description}}</span>
+          
+            
 
 
             
             
           </div>
           <div class="card-footer">
-            
+            <button class="button-19">Show More</button>
           </div>
         </div>
       </div>

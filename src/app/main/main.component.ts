@@ -9,7 +9,7 @@ import { ApiService } from '../services/api.service';
 })
 export class MainComponent implements OnInit {
 
- 
+  busqueda = '';
   arrayWeather: any;
 
   arrayCities = [
@@ -59,6 +59,16 @@ export class MainComponent implements OnInit {
     console.log(this.dataTotal)
 
     
+  }
+
+  searchCity() {
+    console.log(this.busqueda);
+    const city = this.busqueda.toLowerCase();
+    this.api.getCity(city)
+      .subscribe(resp => {
+        console.log('La ciudad ah buscar es ', resp.name)
+        console.log(resp);
+      })
   }
   
 

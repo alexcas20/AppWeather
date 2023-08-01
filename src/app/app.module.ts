@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { ConversorGradosPipe } from './pipes/conversor-grados.pipe'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ConversorGradosPipe } from './pipes/conversor-grados.pipe'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
