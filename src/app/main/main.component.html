@@ -8,9 +8,113 @@
     </div>
   </div>
 </div>
+
+<!-- Information Cards -->
+
+<div class="container mt-5">
+  <div class="row d-flex flex-wrap justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+      <div class="card">
+        <img class="card-img-top" src="../../assets/img/temperature-icon.png" alt="Card image cap">
+        <div class="card-title">
+          <h3>Temperature</h3>
+      </div>
+      <div class="card-body">
+        {{dataWeather?.main?.temp | conversorGrados}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+    <div class="card">
+      <img class="card-img-top" src=".." alt="Card image cap">
+      <div class="card-title">
+        <h3>Weather</h3>
+    </div>
+    <div class="card-body">
+      {{dataWeather?.weather[0]?.main}}
+    </div>
+  </div>
+</div>
+
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+      <div class="card">
+        <img class="card-img-top" src="../../assets/img/sunrise-icon.png" alt="Card image cap">
+        <div class="card-title">
+          <h3>Sunrise</h3>
+      </div>
+      <div class="card-body">
+        {{dataWeather?.sys?.sunrise}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+    <div class="card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-title">
+        <h3>Sunset</h3>
+    </div>
+    <div class="card-body">
+      {{dataWeather?.sys?.sunset}}
+    </div>
+  </div>
+</div>
+
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+      <div class="card">
+        <img class="card-img-top" src="../../assets/img/pressure-icon.png" alt="Card image cap">
+        <div class="card-title">
+          <h3>Pressure</h3>
+      </div>
+      <div class="card-body">
+        {{dataWeather?.main?.pressure}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+    <div class="card">
+      <img class="card-img-top" src="../../assets/img/wind-icon.png" alt="Card image cap">
+      <div class="card-title">
+        <h3>Wind</h3>
+    </div>
+    <div class="card-body">
+      {{dataWeather?.wind?.speed}}
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-4">
+  <div class="card">
+    <img class="card-img-top" src="../../assets/img/humidity-icon.png" alt="Card image cap">
+    <div class="card-title">
+      <h3>Humidity</h3>
+  </div>
+  <div class="card-body">
+    {{dataWeather?.main?.humidity}}
+  </div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6 col-sm-4">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-title">
+      <h3>Visibility</h3>
+  </div>
+  <div class="card-body">
+    {{dataWeather?.visibility}}
+  </div>
+</div>
+</div>
+
+</div>
   
 
 
+<!-- Another cities info -->
+<!-- 
 <div class="container mt-5">
   <h2>Some important Cities</h2>
     <div class="row d-flex justify-content-center">
@@ -60,4 +164,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

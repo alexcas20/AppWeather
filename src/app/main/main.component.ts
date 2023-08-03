@@ -11,6 +11,7 @@ export class MainComponent implements OnInit {
 
   busqueda = '';
   arrayWeather: any;
+  dataWeather : any;
 
   arrayCities = [
     'Mexico City',
@@ -68,7 +69,9 @@ export class MainComponent implements OnInit {
       .subscribe(resp => {
         console.log('La ciudad ah buscar es ', resp.name)
         console.log(resp);
+        this.dataWeather = resp;
       })
+      this.busqueda = '';
   }
   
 

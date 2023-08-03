@@ -7,9 +7,16 @@ export class ConversorGradosPipe implements PipeTransform {
 
   transform( kelvin: number): unknown {
 
-    const gradosCelsius = kelvin - 273.155;
+    console.log('valor de kelvin: ', kelvin)
+    if(kelvin !== null){
+      const gradosCelsius = kelvin - 273.155;
     
-    return  `${Math.floor(gradosCelsius)} °C`;
+      return  `${Math.floor(gradosCelsius)} °C`;
+    }
+
+    return console.log(`Ningun valor en temp.`);
+
+ 
   }
 
 }
