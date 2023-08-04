@@ -2,9 +2,9 @@
 
 <div class="container mt-5">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search City" aria-label="search city" aria-describedby="basic-addon2"  [(ngModel)]="busqueda">
-    <div class="input-group-append">
-      <button class="input-group-text" (click)="searchCity()">Search</button>
+    <input type="text" class="form-control" placeholder="Search City" aria-label="search city" aria-describedby="basic-addon2"  [(ngModel)]="busqueda" (keydown)="search($event)">
+    <div class="input-group-append" >
+      <button class="input-group-text"  (click)="searchCity()">Search</button>
     </div>
   </div>
 </div>
@@ -12,14 +12,14 @@
 <!-- Information Cards -->
 
 <div class="container mt-5">
-  <div class="row d-flex flex-wrap justify-content-center">
+  <div class="row d-flex flex-wrap justify-content-center cards-info">
     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
       <div class="card">
-        <img class="card-img-top" src="../../assets/img/temperature-icon.png" alt="Card image cap">
+        <img class="card-img-top" src="../../assets/img/temperature-icon.png" alt="Temperature">
         <div class="card-title">
           <h3>Temperature</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body-info">
         {{dataWeather?.main?.temp | conversorGrados}}
       </div>
     </div>
@@ -27,23 +27,23 @@
 
   <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
     <div class="card">
-      <img class="card-img-top" src=".." alt="Card image cap">
+      <img class="card-img-top" [src]="weatherCard" alt="Weather image">
       <div class="card-title">
         <h3>Weather</h3>
     </div>
-    <div class="card-body">
-      {{dataWeather?.weather[0]?.main}}
+    <div class="card-body-info">
+      {{dataWeather?.weather[0]?.description}}
     </div>
   </div>
 </div>
 
     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
       <div class="card">
-        <img class="card-img-top" src="../../assets/img/sunrise-icon.png" alt="Card image cap">
+        <img class="card-img-top" src="../../assets/img/sunrise-icon.png" alt="Sunsrise image">
         <div class="card-title">
           <h3>Sunrise</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body-info">
         {{dataWeather?.sys?.sunrise}}
       </div>
     </div>
@@ -51,11 +51,11 @@
 
   <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
     <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="../../assets/img/sunset-icon.png" alt="Sunset image">
       <div class="card-title">
         <h3>Sunset</h3>
     </div>
-    <div class="card-body">
+    <div class="card-body-info">
       {{dataWeather?.sys?.sunset}}
     </div>
   </div>
@@ -63,23 +63,29 @@
 
     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
       <div class="card">
-        <img class="card-img-top" src="../../assets/img/pressure-icon.png" alt="Card image cap">
+        <img class="card-img-top" src="../../assets/img/pressure-icon.png" alt="Pressure image">
         <div class="card-title">
           <h3>Pressure</h3>
       </div>
-      <div class="card-body">
-        {{dataWeather?.main?.pressure}}
+      <div class="card-body-info" *ngIf="dataWeather; else noInfo">
+        {{dataWeather?.main?.pressure + ' hPa'}}
       </div>
+
+      <ng-template #noInfo >
+        <div class="card-body-info">
+          {{dataWeather?.main?.pressure}}
+        </div>
+      </ng-template>
     </div>
   </div>
 
   <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
     <div class="card">
-      <img class="card-img-top" src="../../assets/img/wind-icon.png" alt="Card image cap">
+      <img class="card-img-top" src="../../assets/img/wind-icon.png" alt="Wind image">
       <div class="card-title">
         <h3>Wind</h3>
     </div>
-    <div class="card-body">
+    <div class="card-body-info">
       {{dataWeather?.wind?.speed}}
     </div>
   </div>
@@ -87,11 +93,11 @@
 
 <div class="col-lg-4 col-md-6 col-sm-4">
   <div class="card">
-    <img class="card-img-top" src="../../assets/img/humidity-icon.png" alt="Card image cap">
+    <img class="card-img-top" src="../../assets/img/humidity-icon.png" alt="Humidity image">
     <div class="card-title">
       <h3>Humidity</h3>
   </div>
-  <div class="card-body">
+  <div class="card-body-info">
     {{dataWeather?.main?.humidity}}
   </div>
 </div>
@@ -99,11 +105,11 @@
 
 <div class="col-lg-4 col-md-6 col-sm-4">
   <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="card-img-top" src="../../assets/img/visibility-icon.png" alt="Visibility image">
     <div class="card-title">
       <h3>Visibility</h3>
   </div>
-  <div class="card-body">
+  <div class="card-body-info">
     {{dataWeather?.visibility}}
   </div>
 </div>
@@ -114,7 +120,7 @@
 
 
 <!-- Another cities info -->
-<!-- 
+
 <div class="container mt-5">
   <h2>Some important Cities</h2>
     <div class="row d-flex justify-content-center">

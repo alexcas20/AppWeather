@@ -144,4 +144,23 @@ h2{
   cursor: auto;
 }
 
+/* Images card info */
+.cards-info .card{
+    height: 45vh;
+}
+
+.card-img-top{
+    padding: 3rem 0 0 0;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.card-body-info{
+    margin: 1.5rem 0;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
+}
 

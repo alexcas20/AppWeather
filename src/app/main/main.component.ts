@@ -10,8 +10,9 @@ import { ApiService } from '../services/api.service';
 export class MainComponent implements OnInit {
 
   busqueda = '';
-  arrayWeather: any;
+  // arrayWeather: any;
   dataWeather : any;
+  weatherCard = '../../assets/img/weatherCard-icon.png'
 
   arrayCities = [
     'Mexico City',
@@ -62,6 +63,13 @@ export class MainComponent implements OnInit {
     
   }
 
+  search(e:any){
+   
+    if(e.key === 'Enter'){
+      this.searchCity()
+    }
+  }
+
   searchCity() {
     console.log(this.busqueda);
     const city = this.busqueda.toLowerCase();
@@ -70,9 +78,14 @@ export class MainComponent implements OnInit {
         console.log('La ciudad ah buscar es ', resp.name)
         console.log(resp);
         this.dataWeather = resp;
+        console.log('DATA PARA ICON CAMBIANTE', this.dataWeather)
+        this.weatherCard = `https://openweathermap.org/img/wn/${this.dataWeather.weather[0].icon}@2x.png`;
       })
       this.busqueda = '';
   }
+
+  
   
 
 }
+
