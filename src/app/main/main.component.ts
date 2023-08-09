@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { ApiService } from '../services/api.service';
 
 
@@ -10,7 +11,6 @@ import { ApiService } from '../services/api.service';
 export class MainComponent implements OnInit {
 
   busqueda = '';
-  // arrayWeather: any;
   dataWeather : any;
   weatherCard = '../../assets/img/weatherCard-icon.png'
 
@@ -52,9 +52,7 @@ export class MainComponent implements OnInit {
         } 
        })
         
-        // this.arrayWeather = this.dataW.weather[0];
-        // this.dataTotal.push(this.arrayWeather);
-        // console.log('arrayWeather => ', this.arrayWeather);
+        
       } )
     })
 
@@ -78,9 +76,19 @@ export class MainComponent implements OnInit {
         console.log('La ciudad ah buscar es ', resp.name)
         console.log(resp);
         this.dataWeather = resp;
+        localStorage.setItem('timeZone', resp.timezone.toString());
         console.log('DATA PARA ICON CAMBIANTE', this.dataWeather)
         this.weatherCard = `https://openweathermap.org/img/wn/${this.dataWeather.weather[0].icon}@2x.png`;
+      },(error) => {
+         
+Swal.fire({
+  icon: 'error',
+  title: `Not found info for ${city}`,
+  text: `Please enter a valid city`,
+ 
+})
       })
+      
       this.busqueda = '';
   }
 

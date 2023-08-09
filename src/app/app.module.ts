@@ -7,12 +7,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { ConversorGradosPipe } from './pipes/conversor-grados.pipe'
 import { FormsModule } from '@angular/forms';
+import { DateTimePipe } from './pipes/date-time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ConversorGradosPipe
+    ConversorGradosPipe,
+    DateTimePipe
   ],
   imports: [
     BrowserModule,
