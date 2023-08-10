@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { Component, HostListener, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { ApiService } from '../services/api.service';
 
@@ -31,10 +32,16 @@ export class MainComponent implements OnInit {
   ]
 
   dataTotal: any[] = [];
+  pageYoffset: any;
+
+    @HostListener('window:scroll', []) omWindowScroll() {
+      this.scrollFunction();
+    }
+    
 
 
-
-  constructor(private api : ApiService) { }
+  constructor(private api : ApiService,
+    private scroll: ViewportScroller) { }
 
   ngOnInit(): void {
 
@@ -91,6 +98,20 @@ Swal.fire({
       
       this.busqueda = '';
   }
+
+  scrollFunction(){
+    const btn = document.getElementById('myBtn');
+    if(document.body.scrollTop > 800 || document.documentElement.scrollTop > 800){
+      btn!.style.display = 'block';
+    } else {
+      btn!.style.display = 'none'
+    }
+  }
+
+  scrollToTop(){
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
   
   

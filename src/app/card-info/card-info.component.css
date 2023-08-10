@@ -1,0 +1,55 @@
+
+/* Cards */
+
+.card{
+    background-color: #182848;
+    color: #ffff;
+    box-shadow:  -1px 8px 20px rgba(0, 0, 0, 0.9);
+    margin: 0 0 2rem 0;
+}
+
+
+.card-title{
+    text-align: center;
+    padding: 10px;
+    margin: 2rem 0 -2rem 0;
+    
+}
+
+.card-title h3{
+    font-size: 2.5rem;
+}
+
+.card-body span{
+    font-size: 2rem;
+}
+
+
+
+.card-footer{
+    background-color:#182848;
+    margin: 1rem 0;
+    
+}
+
+/* Images card info */
+
+.cards-info .card{
+    height: 52vh;
+    animation: fadeIn;
+    animation-duration: 2s;
+}
+
+.card-img-top{
+    padding: 3rem 0 0 0;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.card-body{
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
+}

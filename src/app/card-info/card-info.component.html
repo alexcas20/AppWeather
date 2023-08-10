@@ -1,0 +1,113 @@
+
+<!-- Information Cards -->
+
+<div class="container mt-5">
+    <div class="row d-flex flex-wrap justify-content-center cards-info">
+      <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+        <div class="card">
+          <img class="card-img-top" src="../../assets/img/temperature-icon.png" alt="Temperature">
+          <div class="card-title">
+            <h3>Temperature</h3>
+        </div>
+        <div class="card-body">
+          {{dataWeather?.main?.temp | conversorGrados}}
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+      <div class="card">
+        <img class="card-img-top" [src]="weatherCard" alt="Weather image">
+        <div class="card-title">
+          <h3>Weather</h3>
+      </div>
+      <div class="card-body">
+        {{dataWeather?.weather[0]?.description}}
+      </div>
+    </div>
+  </div>
+  
+      <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+        <div class="card">
+          <img class="card-img-top" src="../../assets/img/sunrise-icon.png" alt="Sunsrise image">
+          <div class="card-title">
+            <h3>Sunrise</h3>
+        </div>
+        <div class="card-body">
+          {{dataWeather?.sys?.sunrise | dateTime}}
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+      <div class="card">
+        <img class="card-img-top" src="../../assets/img/sunset-icon.png" alt="Sunset image">
+        <div class="card-title">
+          <h3>Sunset</h3>
+      </div>
+      <div class="card-body">
+        {{dataWeather?.sys?.sunset  | dateTime  }}
+      </div>
+    </div>
+  </div>
+  
+      <!-- <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+        <div class="card">
+          <img class="card-img-top" src="../../assets/img/pressure-icon.png" alt="Pressure image">
+          <div class="card-title">
+            <h3>Pressure</h3>
+        </div>
+        <div class="card-body" *ngIf="dataWeather; else noInfo">
+          {{dataWeather?.main?.pressure + ' hPa'}}
+        </div>
+  
+        <ng-template #noInfo >
+          <div class="card-body">
+            {{dataWeather?.main?.pressure}}
+          </div>
+        </ng-template>
+      </div>
+    </div> -->
+  
+    <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+      <div class="card">
+        <img class="card-img-top" src="../../assets/img/wind-icon.png" alt="Wind image">
+        <div class="card-title">
+          <h3>Wind</h3>
+      </div>
+      <div class="card-body">
+        {{dataWeather?.wind?.speed}}
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-lg-4 col-md-6 col-sm-4">
+    <div class="card">
+      <img class="card-img-top" src="../../assets/img/humidity-icon.png" alt="Humidity image">
+      <div class="card-title">
+        <h3>Humidity</h3>
+    </div>
+    <div class="card-body" *ngIf="dataWeather; else humidity">
+      {{dataWeather?.main?.humidity + '%'}}
+    </div>
+    <ng-template #humidity>
+      <div class="card-body">
+        {{dataWeather?.main?.humidity}}
+      </div>
+    </ng-template>
+  </div>
+  </div>
+  
+  <!-- <div class="col-lg-4 col-md-6 col-sm-4">
+    <div class="card">
+      <img class="card-img-top" src="../../assets/img/visibility-icon.png" alt="Visibility image">
+      <div class="card-title">
+        <h3>Visibility</h3>
+    </div>
+    <div class="card-body">
+      {{dataWeather?.visibility}}
+    </div>
+  </div>
+  </div> -->
+  
+  </div>

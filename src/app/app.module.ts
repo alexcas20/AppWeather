@@ -8,13 +8,15 @@ import { MainComponent } from './main/main.component';
 import { ConversorGradosPipe } from './pipes/conversor-grados.pipe'
 import { FormsModule } from '@angular/forms';
 import { DateTimePipe } from './pipes/date-time.pipe';
+import { CardInfoComponent } from './card-info/card-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     ConversorGradosPipe,
-    DateTimePipe
+    DateTimePipe,
+    CardInfoComponent
   ],
   imports: [
     BrowserModule,
