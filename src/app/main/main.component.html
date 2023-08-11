@@ -9,6 +9,21 @@
   </div>
 </div>
 
+
+<!-- Spinner -->
+<div class="spinner d-flex justify-content-center m-5" *ngIf="loading" >
+  <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="spinner-grow text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
+
 <!-- Button Scroll -->
 <button id="myBtn" class="scroll-to-top" (click)="scrollToTop()">
   <i class="fa-solid fa-arrow-up"></i>
@@ -21,10 +36,10 @@
 
 <!-- Another cities info -->
 
-<div class="container mt-5">
+<div class="container mt-5" >
   <h2>Some important Cities</h2>
     <div class="row d-flex justify-content-center">
-      <div class="col-lg-5 col-md-6 col-sm-8 col-xs-6 " *ngFor="let item of dataTotal">
+      <div class="col-lg-5 col-md-6 col-sm-8 col-xs-6 showSection " *ngFor="let item of dataTotal">
         <div class="card">
           <div class="card-title">
             <h3>{{item.name}}</h3>
@@ -71,3 +86,24 @@
       </div>
     </div>
   </div> 
+
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col icons d-flex justify-content-center">
+          <a href="https://github.com/alexcas20" target="_blank" >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          
+        </div>
+        <div class="copy">
+          <h2>ByJacs 2023 &copy;</h2>
+        </div>
+      </div>
+    </div>
+      
+ 
+  </footer>

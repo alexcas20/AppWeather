@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ConversorGradosPipe implements PipeTransform {
 
-  transform( kelvin: number): unknown {
+  transform( kelvin: number) {
 
     console.log('valor de kelvin: ', kelvin)
     if(kelvin !== null){

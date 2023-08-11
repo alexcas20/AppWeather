@@ -9,6 +9,8 @@ import { ConversorGradosPipe } from './pipes/conversor-grados.pipe'
 import { FormsModule } from '@angular/forms';
 import { DateTimePipe } from './pipes/date-time.pipe';
 import { CardInfoComponent } from './card-info/card-info.component';
+import { WindtoKmPipe } from './pipes/windto-km.pipe';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { CardInfoComponent } from './card-info/card-info.component';
     MainComponent,
     ConversorGradosPipe,
     DateTimePipe,
-    CardInfoComponent
+    CardInfoComponent,
+    WindtoKmPipe
+   
   ],
   imports: [
     BrowserModule,

@@ -32,7 +32,8 @@ export class MainComponent implements OnInit {
   ]
 
   dataTotal: any[] = [];
-  pageYoffset: any;
+  loading: boolean = false;
+ 
 
     @HostListener('window:scroll', []) omWindowScroll() {
       this.scrollFunction();
@@ -80,12 +81,21 @@ export class MainComponent implements OnInit {
     const city = this.busqueda.toLowerCase();
     this.api.getCity(city)
       .subscribe(resp => {
+        this.loading = true;
+        setTimeout(() => {
         console.log('La ciudad ah buscar es ', resp.name)
         console.log(resp);
         this.dataWeather = resp;
         localStorage.setItem('timeZone', resp.timezone.toString());
         console.log('DATA PARA ICON CAMBIANTE', this.dataWeather)
         this.weatherCard = `https://openweathermap.org/img/wn/${this.dataWeather.weather[0].icon}@2x.png`;
+
+        this.loading = false;
+
+        }, 2000)
+
+        
+        
       },(error) => {
          
 Swal.fire({
@@ -101,11 +111,17 @@ Swal.fire({
 
   scrollFunction(){
     const btn = document.getElementById('myBtn');
+    const section = document.querySelectorAll('.showSection');
     if(document.body.scrollTop > 800 || document.documentElement.scrollTop > 800){
       btn!.style.display = 'block';
     } else {
       btn!.style.display = 'none'
     }
+
+   
+
+    
+  
   }
 
   scrollToTop(){
