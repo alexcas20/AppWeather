@@ -1,12 +1,18 @@
 <!-- Search -->
 
 <div class="container mt-5">
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search City" aria-label="search city" aria-describedby="basic-addon2"  [(ngModel)]="busqueda" (keydown)="search($event)">
-    <div class="input-group-append" >
-      <button class="input-group-text"  (click)="searchCity()">Search</button>
+  <div class=" row d-flex justify-content-center">
+    <div class="col-lg-6 col-md-8 col-xs-8">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search City" aria-label="search city" aria-describedby="basic-addon2"  [(ngModel)]="busqueda" (keydown)="search($event)">
+        <div class="input-group-append" >
+          <button class="input-group-text"  (click)="searchCity()">Search</button>
+        </div>
+      </div>
     </div>
+   
   </div>
+
 </div>
 
 
@@ -40,7 +46,7 @@
   <h2>Some important Cities</h2>
     <div class="row d-flex justify-content-center">
       <div class="col-lg-5 col-md-6 col-sm-8 col-xs-6 showSection " *ngFor="let item of dataTotal">
-        <div class="card">
+        <div class="card" (click)="showDataCity(item.name)">
           <div class="card-title">
             <h3>{{item.name}}</h3>
           </div>
@@ -80,7 +86,7 @@
             
           </div>
           <div class="card-footer">
-            <button class="button-19">Show More</button>
+            <button class="button-19" (click)="showDataCity(item.name)">Show More</button>
           </div>
         </div>
       </div>

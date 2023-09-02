@@ -1,4 +1,9 @@
 
+:host{
+    background: #090e18;
+}
+
+
 /* Cards */
 
 .card{
@@ -18,6 +23,15 @@
 
 .card-title h3{
     font-size: 2.5rem;
+}
+
+.card{
+    transition-duration: .5s;
+}
+
+.card:hover{
+    
+    transform: scale(1.05);
 }
 
 

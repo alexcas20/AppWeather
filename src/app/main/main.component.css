@@ -1,14 +1,21 @@
 
 
 /* Title */
-h2{
+ h2{
+  color: #1f223a;
     text-align: center;
     font-size: 4rem;
     font-weight: 900;
     letter-spacing: 5px;
     margin: 2.5rem 0;
-    text-shadow: 4px 2px 8px #000;
+    text-shadow: 5px 8px 15px rgb(27, 27, 27);
 }
+
+.container h2{
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+
 /* Cards */
 
 .card{
@@ -194,3 +201,22 @@ h2{
  .copy h2{
     font-size: 1.2rem;
  }
+
+ .input-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+/* Card */
+ .card{
+  transition-duration: .5s;
+  cursor: pointer;
+}
+
+.card:hover{
+  
+  transform: scale(1.02);
+}
+
+

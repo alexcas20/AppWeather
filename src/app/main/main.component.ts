@@ -109,6 +109,34 @@ Swal.fire({
       this.busqueda = '';
   }
 
+
+  showDataCity(city: string){
+
+    if(city === this.dataWeather?.name){
+        Swal.fire({
+          title: 'This City was selected yet',
+          text: 'Choose another city',
+          icon:'info'
+        })
+        this.scrollToTop();
+    } else {
+      this.api.getCity(city)
+      .subscribe(resp => {
+        this.loading = true;
+        this.scrollToTop(400);
+        setTimeout(() => {
+          this.dataWeather = resp;
+
+          this.loading = false;
+        },2000)
+        
+      })
+
+    }
+    
+  }
+
+
   scrollFunction(){
     const btn = document.getElementById('myBtn');
     const section = document.querySelectorAll('.showSection');
@@ -124,9 +152,16 @@ Swal.fire({
   
   }
 
-  scrollToTop(){
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  scrollToTop(pos = 0){
+    if(pos != 0 ){
+      document.body.scrollTop = 200; // For Safari
+      document.documentElement.scrollTop = 400; // For Chrome, Firefox, IE and Opera
+    }
+    else {
+      document.body.scrollTop = pos; // For Safari
+      document.documentElement.scrollTop = pos; // For Chrome, Firefox, IE and Opera
+    }
+   
 }
 
   
