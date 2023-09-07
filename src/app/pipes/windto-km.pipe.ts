@@ -11,7 +11,7 @@ export class WindtoKmPipe implements PipeTransform {
       return `${Math.floor(speedToKm)} km/h`; 
     }
     
-    return console.log(`Ningun valor.`);
+    return;
   }
 
 }

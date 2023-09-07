@@ -50,7 +50,7 @@ export class MainComponent implements OnInit {
       this.api.getCity(el)
       .subscribe(resp => {
        
-        console.log('Response => ', resp);
+  
       
         this.dataTotal.push(resp)
 
@@ -64,8 +64,6 @@ export class MainComponent implements OnInit {
       } )
     })
 
-    console.log(this.dataTotal)
-
     
   }
 
@@ -77,17 +75,16 @@ export class MainComponent implements OnInit {
   }
 
   searchCity() {
-    console.log(this.busqueda);
+ 
     const city = this.busqueda.toLowerCase();
     this.api.getCity(city)
       .subscribe(resp => {
         this.loading = true;
         setTimeout(() => {
-        console.log('La ciudad ah buscar es ', resp.name)
-        console.log(resp);
+       
         this.dataWeather = resp;
         localStorage.setItem('timeZone', resp.timezone.toString());
-        console.log('DATA PARA ICON CAMBIANTE', this.dataWeather)
+   
         this.weatherCard = `https://openweathermap.org/img/wn/${this.dataWeather.weather[0].icon}@2x.png`;
 
         this.loading = false;
