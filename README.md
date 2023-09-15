@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
+## Page
+https://jacs-weather.netlify.app
+
+## Captures
+![weather1](https://github.com/alexcas20/AppWeather/assets/102688836/b7dbffcd-f6ea-4af0-9ff9-f6793d4bb76a)
+
+![weather2](https://github.com/alexcas20/AppWeather/assets/102688836/5c787bc7-3476-4aed-9934-c35363645ca3)
+
+![weather3](https://github.com/alexcas20/AppWeather/assets/102688836/a2473bba-f062-4363-bb49-c41ceff5e656)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
