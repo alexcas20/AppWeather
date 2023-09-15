@@ -41,8 +41,7 @@ export class MainComponent implements OnInit {
     
 
 
-  constructor(private api : ApiService,
-    private scroll: ViewportScroller) { }
+  constructor(private api : ApiService) { }
 
   ngOnInit(): void {
 
