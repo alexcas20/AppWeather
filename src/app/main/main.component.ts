@@ -136,7 +136,7 @@ Swal.fire({
 
   scrollFunction(){
     const btn = document.getElementById('myBtn');
-    const section = document.querySelectorAll('.showSection');
+    
     if(document.body.scrollTop > 800 || document.documentElement.scrollTop > 800){
       btn!.style.display = 'block';
     } else {
