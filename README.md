@@ -1,7 +1,7 @@
 # AppWeather
 
 ## Info
-  App for show the weather of the city that you search.
+  App for show the weather of the city that you want search.
   * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
 
 ## Demo
